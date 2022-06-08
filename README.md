@@ -28,3 +28,6 @@ syllables data taken from here:
 https://docs.rs/crate/syllable/0.1.0/source/resource/data.csv
 
 Inspired by this post: https://sive.rs/com
+
+Can't run the program?
+Try https://leandomainsearch.com
