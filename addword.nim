@@ -4,17 +4,14 @@ import std/sets
 
 let seedword = paramStr(1)
 
-var domains = initHashSet[string]()
+var wanted = initHashSet[string]()
 
-for line in lines "domains.txt":
-  domains.incl(line)
+for line in lines "goodwords.txt":
+  wanted.incl(seedword & line)
+  wanted.incl(line & seedword)
 
-for line in lines "goodwords.csv":
-  let prefix_domain = seedword & line
-  if not(prefix_domain in domains):
-    echo prefix_domain
+for line in lines "com-domains.txt":
+  wanted.excl(line)
 
-  let suffix_domain = line & seedword
-  if not(suffix_domain in domains):
-    echo suffix_domain
-
+for domain in wanted:
+  echo domain
