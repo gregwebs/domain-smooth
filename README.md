@@ -2,24 +2,31 @@ Find domain names that you like.
 This will add small or 1 syllable words onto a seed word
 and check it against available domain names.
 
+Dependencies
+  * [nim compiler](https://nim-lang.org/install.html)
+  * [just](https://github.com/casey/just#packages)
+
+just automates the workflow in a [Justfile](https://github.com/casey/just).
+You can look st the Justfile and run the commands manually if you like.
+
 First generate goodwords.txt
 
-	nim c -r goodwords.nim > goodwords.txt
+	just run-good
 
 You can change goodwords.nim to your liking.
 It should be trivial to translate to python.
 But to use Nim, just `brew install nim`, etc works.
 
 Next you need the list of registered domain names. You can get this from ICANN here: https://czds.icann.org/
-Place this as registered.txt
+Place this as com.zone and then run
+
+	just com-domains
 
 Now run:
 
-	nim c -r addword.nim word
+	just run word
 
 Where `word` is a word you want to use in your domain name.
-
-This workflow is wrapped up in a [Justfile](https://github.com/casey/just)
 
 
 ## References
