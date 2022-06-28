@@ -31,8 +31,7 @@ Where `word` is a word you want to use in your domain name.
 
 ## References
 
-syllables data taken from here:
-https://docs.rs/crate/syllable/0.1.0/source/resource/data.csv
+syllables data is from the syllapy project (MIT license).
 
 Inspired by this post: https://sive.rs/com
 
